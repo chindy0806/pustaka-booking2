@@ -54,5 +54,6 @@ public function detailBuku()
     $this->load->view('templates/templates-user/header', $data);
     $this->load->view('buku/detail-buku', $data);
     $this->load->view('templates/templates-user/footer');
+    $this->load->view('templates/templates-user/modal');
     }
 }
