@@ -139,7 +139,7 @@ public function bookingSelesai($where)
         $data['user'] = $this->session->userdata('nama');
         $data['judul'] = "Selesai Booking";
         $data['useraktif'] = $this->ModelUser->cekData(['id' => $this->session->userdata('id_user')])->result();
-        $data['items'] = $this->db->query("select*from booking bo, booking_detail d, buku buwhere d.id_booking=bo.id_booking and d.id_buku=bu.id and bo.id_user='$where'")>result_array();
+        $data['items'] = $this->db->query("select*from booking bo, booking_detail d, buku bu where d.id_booking=bo.id_booking and d.id_buku=bu.id and bo.id_user='$where'")->result_array();
         $this->load->view('templates/templates-user/header', $data);
         $this->load->view('booking/info-booking', $data);
         $this->load->view('templates/templates-user/modal');
