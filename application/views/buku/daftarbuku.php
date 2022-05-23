@@ -3,14 +3,10 @@
         <?= validation_errors();?>
     </div>
     <?php }?>
-
- <?= $this->session->flashdata('pesan'); ?>
-
+    <?= $this->session->flashdata('pesan'); ?>
     <div style="padding: 25px;">
-        <div class="x_panel">
-
-            <div class="x_content">
-
+    <div class="x_panel">
+        <div class="x_content">
             <!-- Tampilkan semua produk -->
             <div class="row">
                 <!-- looping products -->
@@ -25,18 +21,17 @@
                                 <p>
                                     <?php
                                     if ($buku->stok < 1) {
-                                        echo "<i class='btn btn-outline-primary fas fw fa-shopping-cart'> Booking&nbsp;&nbsp 0</i>";
+                                        echo "<i class=' disabled btn btn-outline-primary fas fw fa-ban' style='color:red'>Stock&nbsp;&nbsp 0</i>";
                                     } else {
                                         echo "<a class='btn btn-outline-primary fas fw fa-shopping-cart' href='" . base_url('booking/tambahBooking/' . $buku->id) . "'> Booking</a>";
-                                    }                   
+                                    }
                                     ?>
-                                    
                                     <a class="btn btn-outline-warning fas fw fa-search" href="<?= base_url('home/detailBuku/' . $buku->id); ?>"> Detail</a></p>
                                 </div>
                             </div>
                         </div> <?php } ?>
-                    <!-- end looping -->
+                        <!-- end looping -->
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </div
